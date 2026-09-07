@@ -24,7 +24,7 @@ GLOBAL_SAFETY_SUFFIX = (
 
 
 async def _gemini_reply(system_prompt: str, history: list, user_message: str) -> str:
-    model = genai.GenerativeModel(model_name="gemini-2.0-flash", system_instruction=system_prompt)
+    model = genai.GenerativeModel(model_name="gemini-3.1-flash-lite", system_instruction=system_prompt)
     chat_history = [
         {"role": "user" if m["role"] == "user" else "model", "parts": [m["content"]]}
         for m in history
